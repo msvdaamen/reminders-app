@@ -1,0 +1,25 @@
+<h1 mat-dialog-title><span style="text-transform: capitalize">{{type}}</span> reminder</h1>
+<div mat-dialog-content>
+  <form [formGroup]="createForm">
+    <mat-form-field class="full-width">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" autocomplete="off">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description" autocomplete="off">
+    </mat-form-field>
+    <mat-checkbox formControlName="hasReminder">Has reminder</mat-checkbox>
+    <mat-form-field class="full-width">
+      <mat-label>Interval</mat-label>
+      <mat-select formControlName="reminderInterval">
+        <mat-option value="daily">Daily</mat-option>
+        <mat-option value="weekly">Weekly</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions style="justify-content: flex-end">
+  <button mat-button (click)="close()">Close</button>
+  <button mat-button color="accent" cdkFocusInitial (click)="save()">Aanmaken</button>
+</div>

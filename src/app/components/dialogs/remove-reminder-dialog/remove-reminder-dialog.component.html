@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Verwijder reminder</h1>
+<div mat-dialog-content>
+  <span>Weet je zeker dat je deze reminder wilt  verwijderen</span>
+</div>
+<div mat-dialog-actions style="justify-content: flex-end">
+  <button mat-button (click)="close()">Close</button>
+  <button mat-button color="warn" cdkFocusInitial (click)="remove()">Verwijderen</button>
+</div>

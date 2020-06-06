@@ -1,0 +1,25 @@
+<div class="container">
+  <mat-card class="card">
+    <mat-card-title>Onderzoekdoen.nl</mat-card-title>
+    <mat-card-content>
+      <form>
+        <mat-form-field class="full-width">
+          <mat-label>E-mail</mat-label>
+          <input matInput type="email" placeholder="E-mail">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Wachtwoord</mat-label>
+          <input matInput type="password" placeholder="Wachtwoord">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Wachtwoord bevestiging</mat-label>
+          <input matInput type="password" placeholder="Wachtwoord bevestiging">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="actions">
+      <button mat-button routerLink="/auth/login">Login</button>
+      <button mat-button color="primary">Register</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

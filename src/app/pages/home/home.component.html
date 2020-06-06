@@ -1,0 +1,40 @@
+<mat-toolbar class="toolbar">
+  <span>Reminders</span>
+  <div class="spacer"></div>
+  <mat-form-field class="input-search">
+    <input matInput placeholder="Search">
+  </mat-form-field>
+
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item>Help</button>
+  </mat-menu>
+
+  <button mat-icon-button [matMenuTriggerFor]="userMenu">
+    <mat-icon>person</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="container">
+  <mat-card *ngFor="let reminder of reminders$ | async; let i = index">
+    <mat-card-title>
+      {{reminder.title}}
+    </mat-card-title>
+    <mat-card-content>
+      <span>{{reminder.description}}</span><br>
+    </mat-card-content>
+    <mat-card-actions class="action">
+      <div class="reminder-container">
+        <span *ngIf="reminder.hasReminder">remind: {{reminder.reminderTime}} {{reminder.reminderInterval}}</span>
+        <span *ngIf="reminder.endDate">end: {{reminder.endDate}}</span>
+      </div>
+      <button mat-button>Edit</button>
+      <button mat-button color="warn" class="remove" (click)="openRemoveDialog(i)">Remove</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+<div class="actions">
+  <button mat-fab color="primary" (click)="openCreateDialog()"><mat-icon>add</mat-icon></button>
+</div>

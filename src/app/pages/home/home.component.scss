@@ -1,0 +1,39 @@
+.container {
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
+  grid-gap: 5px;
+}
+
+.toolbar {
+  display: flex;
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  ::ng-deep .input-search > .mat-form-field-wrapper > .mat-form-field-underline {
+   height: 0;
+  }
+}
+
+.reminder-container {
+  flex-grow: 1;
+  font-size: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.action {
+  margin-left: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.actions {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
